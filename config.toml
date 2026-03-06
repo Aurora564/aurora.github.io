@@ -1,9 +1,11 @@
-baseURL = "https://Aurora564.github.io/"       # 发布后改成真实地址
+baseURL = "https://Aurora564.github.io/"
 languageCode = "zh-cn"
 title = "Aurora Blog"
-theme = "PaperMod"                     # 主题名必须匹配目录
-
+theme = "PaperMod"
 enableRobotsTXT = true
+
+[author]
+  name = "Aurora"
 
 [pagination]
   pagerSize = 8
@@ -11,27 +13,21 @@ enableRobotsTXT = true
 [taxonomies]
   tag = "tags"
   category = "categories"
-  series = "series"       # 支持“系列文章”
+  series = "series"
 
-# ---- 主题参数 ----
 [params]
-
-  # 站点基本
   description = "技术、读书与思考"
-  defaultTheme = "auto"          # dark/light/auto
-  disableThemeToggle = false     # 是否禁用主题切换按钮
+  defaultTheme = "auto"
+  disableThemeToggle = false
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
 
-  ShowReadingTime = true         # 显示阅读时长
-  ShowShareButtons = true        # 显示社交分享按钮
-  ShowPostNavLinks = true        # 显示上一/下一篇链接
-
-  # 首页 Info 信息
   [params.homeInfo]
     Title = "Aurora Blog"
     Content = "技术沉淀 · 阅读笔记 · 深度思考"
     AlignSocialIconsTo = "center"
 
-# 菜单导航
 [[menu.main]]
 name = "首页"
 url = "/"
