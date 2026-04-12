@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 510" width="540" height="510">
+  <style>
+    .bg       { fill: #1e1e2e; }
+    .addr-lbl { font: 13px/1.4 'Courier New', Courier, monospace; fill: #cdd6f4; }
+    .region   { rx: 3; stroke-width: 1.5; }
+    .region-bg{ fill: #313244; }
+    .title    { font: bold 14px/1.4 'Courier New', Courier, monospace; }
+    .desc     { font: 12px/1.4 'Courier New', Courier, monospace; fill: #a6adc8; }
+    .arrow    { font: 13px/1.4 'Courier New', Courier, monospace; fill: #89dceb; }
+    .gap-bg   { fill: #181825; }
+    .gap-border { stroke: #585b70; stroke-width: 1; stroke-dasharray: 6 3; fill: none; }
+    .gap-lbl  { font: 12px/1.4 'Courier New', Courier, monospace; fill: #6c7086; }
+    /* region accent colors */
+    .c-stack  { stroke: #89b4fa; }
+    .c-heap   { stroke: #a6e3a1; }
+    .c-bss    { stroke: #cba6f7; }
+    .c-data   { stroke: #fab387; }
+    .c-text   { stroke: #f38ba8; }
+    .t-stack  { fill: #89b4fa; }
+    .t-heap   { fill: #a6e3a1; }
+    .t-bss    { fill: #cba6f7; }
+    .t-data   { fill: #fab387; }
+    .t-text   { fill: #f38ba8; }
+  </style>
+
+  <!-- Background -->
+  <rect width="540" height="510" rx="10" class="bg"/>
+
+  <!-- Top label: high address -->
+  <text x="270" y="24" text-anchor="middle" class="addr-lbl">虚拟地址（高）</text>
+  <text x="270" y="40" text-anchor="middle" class="addr-lbl">▲</text>
+
+  <!-- ── Stack ─────────────────────────────────── y=48..140 -->
+  <rect x="60" y="48" width="420" height="92" rx="3" class="region-bg c-stack region"/>
+  <text x="80" y="72"  class="title t-stack">Stack 栈</text>
+  <text x="80" y="91"  class="desc">函数的局部变量、参数、返回地址</text>
+  <text x="270" y="127" text-anchor="middle" class="arrow">▼  向下增长</text>
+
+  <!-- ── Gap ────────────────────────────────────── y=145..205 -->
+  <rect x="60" y="145" width="420" height="58" rx="3" class="gap-bg"/>
+  <rect x="60" y="145" width="420" height="58" rx="3" class="gap-border"/>
+  <text x="270" y="179" text-anchor="middle" class="gap-lbl">Stack 与 Heap 之间的空闲区域</text>
+
+  <!-- ── Heap ───────────────────────────────────── y=208..300 -->
+  <rect x="60" y="208" width="420" height="92" rx="3" class="region-bg c-heap region"/>
+  <text x="270" y="234" text-anchor="middle" class="arrow">▲  向上增长</text>
+  <text x="80" y="265"  class="title t-heap">Heap 堆</text>
+  <text x="80" y="284"  class="desc">malloc / free 管理的动态内存</text>
+
+  <!-- ── BSS ───────────────────────────────────── y=305..365 -->
+  <rect x="60" y="305" width="420" height="58" rx="3" class="region-bg c-bss region"/>
+  <text x="80" y="328"  class="title t-bss">BSS Segment</text>
+  <text x="80" y="349"  class="desc">未初始化的全局 / 静态变量（默认为 0）</text>
+
+  <!-- ── Data ──────────────────────────────────── y=368..428 -->
+  <rect x="60" y="368" width="420" height="58" rx="3" class="region-bg c-data region"/>
+  <text x="80" y="391"  class="title t-data">Data Segment</text>
+  <text x="80" y="412"  class="desc">已初始化的全局 / 静态变量</text>
+
+  <!-- ── Text ──────────────────────────────────── y=431..491 -->
+  <rect x="60" y="431" width="420" height="58" rx="3" class="region-bg c-text region"/>
+  <text x="80" y="454"  class="title t-text">Text Segment（代码段）</text>
+  <text x="80" y="474"  class="desc">编译后的机器指令（只读）</text>
+
+  <!-- Bottom label: low address -->
+  <text x="270" y="500" text-anchor="middle" class="addr-lbl">▼  虚拟地址（低）</text>
+</svg>

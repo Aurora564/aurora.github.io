@@ -3,6 +3,9 @@ languageCode = "zh-cn"
 title = "Aurora Blog"
 theme = "PaperMod"
 enableRobotsTXT = true
+hasCJKLanguage = true
+relativeURLs = false
+canonifyURLs = true
 
 [pagination]
   pagerSize = 8
@@ -20,6 +23,25 @@ enableRobotsTXT = true
   ShowReadingTime = true
   ShowShareButtons = true
   ShowPostNavLinks = true
+  ShowCodeCopyButtons = true
+  ShowBreadCrumbs = true
+  ShowFullTextinRSS = true
+  ShowToc = true
+  TocOpen = false
+  mermaid = true
+
+[markup.highlight]
+  noClasses = false
+  lineNos = true
+  style = "github-dark"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 
   [params.homeInfo]

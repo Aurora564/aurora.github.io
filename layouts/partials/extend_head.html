@@ -1,0 +1,21 @@
+{{- /* Head custom content area start */ -}}
+{{- /*     Insert any custom code (web-analytics, resources, etc.) - it will appear in the <head></head> section of every page. */ -}}
+{{- /*     Can be overwritten by partial with the same name in the global layouts. */ -}}
+{{- /* Head custom content area end */ -}}
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: true,
+    look: 'handDrawn',
+    theme: 'base',
+    themeVariables: {
+      fontFamily: 'Virgil, Comic Sans MS, Segoe Print, cursive',
+      primaryColor: '#fffaf2',
+      primaryBorderColor: '#6b5b53',
+      primaryTextColor: '#2f2a26',
+      lineColor: '#6b5b53',
+      background: '#fffdf8'
+    }
+  });
+</script>
