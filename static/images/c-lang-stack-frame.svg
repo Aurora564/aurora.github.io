@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" width="480" height="360">
+  <style>
+    .bg    { fill: #1e1e2e; }
+    .box   { fill: #313244; stroke-width: 1.5; }
+    .title { font: bold 14px/1.4 'Courier New', Courier, monospace; }
+    .desc  { font: 12px/1.4 'Courier New', Courier, monospace; fill: #a6adc8; }
+    .lbl   { font: 12px/1.4 'Courier New', Courier, monospace; fill: #cdd6f4; }
+  </style>
+
+  <rect width="480" height="360" rx="10" class="bg"/>
+
+  <text x="240" y="22" text-anchor="middle" class="lbl">虚拟地址（高）  ▲</text>
+
+  <!-- 函数参数 -->
+  <rect x="60" y="32" width="360" height="56" rx="3" class="box" stroke="#89b4fa"/>
+  <text x="240" y="56" text-anchor="middle" class="title" fill="#89b4fa">函数参数（副本）</text>
+  <text x="240" y="76" text-anchor="middle" class="desc">调用者传入的参数的拷贝</text>
+
+  <!-- 返回地址 -->
+  <rect x="60" y="91" width="360" height="56" rx="3" class="box" stroke="#a6e3a1"/>
+  <text x="240" y="115" text-anchor="middle" class="title" fill="#a6e3a1">返回地址</text>
+  <text x="240" y="135" text-anchor="middle" class="desc">函数返回后跳回哪里继续执行</text>
+
+  <!-- 帧指针 -->
+  <rect x="60" y="150" width="360" height="56" rx="3" class="box" stroke="#cba6f7"/>
+  <text x="240" y="174" text-anchor="middle" class="title" fill="#cba6f7">调用者的帧指针（rbp）</text>
+  <text x="240" y="194" text-anchor="middle" class="desc">用于恢复调用者的栈帧</text>
+
+  <!-- 局部变量 1 -->
+  <rect x="60" y="209" width="360" height="46" rx="3" class="box" stroke="#fab387"/>
+  <text x="240" y="237" text-anchor="middle" class="title" fill="#fab387">局部变量 1</text>
+
+  <!-- 局部变量 2 -->
+  <rect x="60" y="258" width="360" height="46" rx="3" class="box" stroke="#fab387"/>
+  <text x="240" y="286" text-anchor="middle" class="title" fill="#fab387">局部变量 2  ···</text>
+
+  <text x="240" y="330" text-anchor="middle" class="lbl">▼  rsp（栈指针，低地址方向）</text>
+</svg>

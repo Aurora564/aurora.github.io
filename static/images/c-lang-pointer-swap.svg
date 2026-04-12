@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" width="520" height="200">
+  <style>
+    .bg    { fill: #1e1e2e; }
+    .box   { fill: #313244; stroke-width: 1.5; }
+    .title { font: bold 13px/1.4 'Courier New', Courier, monospace; }
+    .mono  { font: 12px/1.4 'Courier New', Courier, monospace; fill: #a6adc8; }
+    .lbl   { font: 12px/1.4 'Courier New', Courier, monospace; fill: #cdd6f4; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="2" refY="3" orient="auto">
+      <polygon points="8 3, 0 0, 0 6" fill="#f9e2af"/>
+    </marker>
+  </defs>
+
+  <rect width="520" height="200" rx="10" class="bg"/>
+
+  <!-- main 的栈帧（左） -->
+  <rect x="20" y="40" width="180" height="110" rx="3" class="box" stroke="#89b4fa"/>
+  <text x="110" y="62" text-anchor="middle" class="title" fill="#89b4fa">main 的栈帧</text>
+  <text x="110" y="84" text-anchor="middle" class="mono">x = 1</text>
+  <text x="110" y="108" text-anchor="middle" class="mono">y = 2</text>
+
+  <!-- swap_ok 的栈帧（右） -->
+  <rect x="320" y="40" width="180" height="110" rx="3" class="box" stroke="#a6e3a1"/>
+  <text x="410" y="62" text-anchor="middle" class="title" fill="#a6e3a1">swap_ok 的栈帧</text>
+  <text x="410" y="84" text-anchor="middle" class="mono">a = &amp;x</text>
+  <text x="410" y="108" text-anchor="middle" class="mono">b = &amp;y</text>
+
+  <!-- 箭头：a → x -->
+  <line x1="318" y1="82" x2="202" y2="82" stroke="#f9e2af" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <!-- 箭头：b → y -->
+  <line x1="318" y1="106" x2="202" y2="106" stroke="#f9e2af" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+  <text x="260" y="178" text-anchor="middle" class="lbl">a、b 存的是 x、y 的地址，解引用才能修改原变量</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150" width="520" height="150">
+  <style>
+    .bg    { fill: #1e1e2e; }
+    .box   { fill: #313244; stroke-width: 1.5; }
+    .title { font: bold 13px/1.4 'Courier New', Courier, monospace; }
+    .mono  { font: 12px/1.4 'Courier New', Courier, monospace; fill: #a6adc8; }
+    .lbl   { font: 12px/1.4 'Courier New', Courier, monospace; fill: #cdd6f4; }
+    .note  { font: 11px/1.4 'Courier New', Courier, monospace; fill: #6c7086; }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="6" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#f9e2af"/>
+    </marker>
+  </defs>
+
+  <rect width="520" height="150" rx="10" class="bg"/>
+
+  <!-- 栈帧 -->
+  <rect x="30" y="30" width="160" height="70" rx="3" class="box" stroke="#f38ba8"/>
+  <text x="110" y="52" text-anchor="middle" class="title" fill="#f38ba8">栈（Stack）</text>
+  <text x="110" y="72" text-anchor="middle" class="mono">p = 0x...a0</text>
+  <text x="110" y="90" text-anchor="middle" class="note">指针变量，8 字节</text>
+
+  <!-- 堆块 -->
+  <rect x="330" y="30" width="160" height="70" rx="3" class="box" stroke="#fab387"/>
+  <text x="410" y="52" text-anchor="middle" class="title" fill="#fab387">堆（Heap）</text>
+  <text x="410" y="72" text-anchor="middle" class="mono">[?][?][?]</text>
+  <text x="410" y="90" text-anchor="middle" class="note">12 字节，未初始化</text>
+
+  <!-- 箭头 -->
+  <line x1="192" y1="65" x2="328" y2="65" stroke="#f9e2af" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 说明 -->
+  <text x="260" y="136" text-anchor="middle" class="note">p 本身在栈上（8字节），指向的内存（12字节）在堆上</text>
+</svg>

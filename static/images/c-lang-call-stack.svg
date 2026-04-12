@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 310" width="480" height="310">
+  <style>
+    .bg    { fill: #1e1e2e; }
+    .box   { fill: #313244; stroke-width: 1.5; }
+    .title { font: bold 13px/1.4 'Courier New', Courier, monospace; }
+    .mono  { font: 12px/1.4 'Courier New', Courier, monospace; fill: #a6adc8; }
+    .lbl   { font: 12px/1.4 'Courier New', Courier, monospace; fill: #cdd6f4; }
+  </style>
+
+  <rect width="480" height="310" rx="10" class="bg"/>
+
+  <text x="240" y="22" text-anchor="middle" class="lbl">高地址</text>
+
+  <!-- main 栈帧 -->
+  <rect x="60" y="32" width="360" height="70" rx="3" class="box" stroke="#89b4fa"/>
+  <text x="80" y="56"  class="title" fill="#89b4fa">main 的栈帧</text>
+  <text x="80" y="76"  class="mono">a = 100   &amp;a ≈ 0x7ffd...1c3c</text>
+
+  <!-- foo 栈帧 -->
+  <rect x="60" y="106" width="360" height="70" rx="3" class="box" stroke="#a6e3a1"/>
+  <text x="80" y="130" class="title" fill="#a6e3a1">foo 的栈帧</text>
+  <text x="80" y="150" class="mono">b = 200   &amp;b ≈ 0x7ffd...1c18</text>
+
+  <!-- bar 栈帧 -->
+  <rect x="60" y="180" width="360" height="70" rx="3" class="box" stroke="#f38ba8"/>
+  <text x="80" y="204" class="title" fill="#f38ba8">bar 的栈帧</text>
+  <text x="80" y="224" class="mono">c = 300   &amp;c ≈ 0x7ffd...1bf4</text>
+
+  <text x="240" y="276" text-anchor="middle" class="lbl">低地址（栈顶）</text>
+  <text x="240" y="296" text-anchor="middle" class="mono">← 调用越深，地址越小</text>
+</svg>

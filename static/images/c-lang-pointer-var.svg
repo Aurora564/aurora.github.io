@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 180" width="520" height="180">
+  <style>
+    .bg    { fill: #1e1e2e; }
+    .box   { fill: #313244; stroke-width: 1.5; }
+    .title { font: bold 13px/1.4 'Courier New', Courier, monospace; }
+    .mono  { font: 12px/1.4 'Courier New', Courier, monospace; fill: #a6adc8; }
+    .lbl   { font: 12px/1.4 'Courier New', Courier, monospace; fill: #cdd6f4; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="6" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#f9e2af"/>
+    </marker>
+  </defs>
+
+  <rect width="520" height="180" rx="10" class="bg"/>
+
+  <!-- 变量 x（左） -->
+  <rect x="30" y="30" width="180" height="110" rx="3" class="box" stroke="#89b4fa"/>
+  <text x="120" y="53" text-anchor="middle" class="title" fill="#89b4fa">变量 x</text>
+  <text x="120" y="73" text-anchor="middle" class="mono">地址: 0x7ffd...a4</text>
+  <text x="120" y="91" text-anchor="middle" class="mono">类型: int</text>
+  <text x="120" y="109" text-anchor="middle" class="mono">值:   42</text>
+
+  <!-- 箭头：p → x -->
+  <line x1="308" y1="85" x2="213" y2="85" stroke="#f9e2af" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+  <!-- 指针 p（右） -->
+  <rect x="310" y="30" width="180" height="110" rx="3" class="box" stroke="#a6e3a1"/>
+  <text x="400" y="53" text-anchor="middle" class="title" fill="#a6e3a1">指针 p</text>
+  <text x="400" y="73" text-anchor="middle" class="mono">地址: 0x7ffd...98</text>
+  <text x="400" y="91" text-anchor="middle" class="mono">类型: int *</text>
+  <text x="400" y="109" text-anchor="middle" class="mono">值: 0x7ffd...a4</text>
+
+  <text x="260" y="160" text-anchor="middle" class="lbl">p 本身是 8 字节变量，存的值是 x 的地址</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 100" width="480" height="100">
+  <style>
+    .bg    { fill: #1e1e2e; }
+    .title { font: bold 14px/1.6 'Courier New', Courier, monospace; fill: #cdd6f4; }
+    .sub   { font: 12px/1.6 'Courier New', Courier, monospace; fill: #a6adc8; }
+  </style>
+
+  <rect width="480" height="100" rx="10" class="bg"/>
+
+  <!-- 规则框 -->
+  <rect x="30" y="14" width="420" height="72" rx="6" fill="#2a2a3c" stroke="#89b4fa" stroke-width="1.5"/>
+
+  <text x="240" y="42" text-anchor="middle" class="title">谁申请的内存，谁负责释放</text>
+  <text x="240" y="66" text-anchor="middle" class="sub">函数可以"转移所有权"，但必须明确</text>
+  <text x="240" y="80" text-anchor="middle" class="sub">——注释说明调用方需要 free()</text>
+</svg>

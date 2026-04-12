@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 340" width="480" height="340">
+  <style>
+    .bg    { fill: #1e1e2e; }
+    .box   { fill: #313244; stroke-width: 1.5; }
+    .title { font: bold 13px/1.4 'Courier New', Courier, monospace; }
+    .mono  { font: 12px/1.4 'Courier New', Courier, monospace; fill: #a6adc8; }
+    .addr  { font: 11px/1.4 'Courier New', Courier, monospace; fill: #6c7086; }
+  </style>
+
+  <rect width="480" height="340" rx="10" class="bg"/>
+
+  <text x="240" y="20" text-anchor="middle" class="addr">高地址</text>
+
+  <!-- 栈 -->
+  <rect x="60" y="28" width="280" height="58" rx="3" class="box" stroke="#f38ba8"/>
+  <text x="200" y="50" text-anchor="middle" class="title" fill="#f38ba8">栈（Stack）</text>
+  <text x="200" y="68" text-anchor="middle" class="mono">局部变量、函数调用</text>
+  <text x="354" y="60" class="addr">↓ 向低地址增长</text>
+
+  <!-- 空闲区 -->
+  <text x="200" y="106" text-anchor="middle" class="addr">· · · 空闲区 · · ·</text>
+
+  <!-- 堆（高亮） -->
+  <rect x="60" y="115" width="280" height="60" rx="3" fill="#3d3149" stroke="#fab387" stroke-width="2"/>
+  <text x="200" y="138" text-anchor="middle" class="title" fill="#fab387">堆（Heap）</text>
+  <text x="200" y="157" text-anchor="middle" class="mono">malloc 在此申请，手动管理</text>
+  <text x="354" y="148" class="addr">↑ 向高地址增长</text>
+
+  <!-- BSS -->
+  <rect x="60" y="188" width="280" height="38" rx="3" class="box" stroke="#a6e3a1"/>
+  <text x="200" y="212" text-anchor="middle" class="title" fill="#a6e3a1">BSS（未初始化全局变量）</text>
+
+  <!-- 数据段 -->
+  <rect x="60" y="236" width="280" height="38" rx="3" class="box" stroke="#89b4fa"/>
+  <text x="200" y="260" text-anchor="middle" class="title" fill="#89b4fa">数据段（初始化全局/静态变量）</text>
+
+  <!-- 代码段 -->
+  <rect x="60" y="284" width="280" height="38" rx="3" class="box" stroke="#cba6f7"/>
+  <text x="200" y="308" text-anchor="middle" class="title" fill="#cba6f7">代码段（程序指令）</text>
+
+  <text x="240" y="334" text-anchor="middle" class="addr">低地址</text>
+</svg>

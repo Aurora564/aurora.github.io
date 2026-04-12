@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 240" width="380" height="240">
+  <style>
+    .bg    { fill: #1e1e2e; }
+    .box   { fill: #313244; stroke-width: 1.5; }
+    .title { font: bold 14px/1.4 'Courier New', Courier, monospace; }
+    .mono  { font: 12px/1.4 'Courier New', Courier, monospace; fill: #a6adc8; }
+    .lbl   { font: 12px/1.4 'Courier New', Courier, monospace; fill: #cdd6f4; }
+    .note  { font: 11px/1.4 'Courier New', Courier, monospace; fill: #f9e2af; }
+  </style>
+
+  <rect width="380" height="240" rx="10" class="bg"/>
+
+  <!-- bar（顶层） -->
+  <rect x="60" y="30" width="200" height="46" rx="3" class="box" stroke="#f38ba8"/>
+  <text x="160" y="58" text-anchor="middle" class="title" fill="#f38ba8">bar</text>
+  <text x="276" y="56" class="note">← 当前函数（栈顶）</text>
+
+  <!-- foo（中层） -->
+  <rect x="60" y="80" width="200" height="46" rx="3" class="box" stroke="#a6e3a1"/>
+  <text x="160" y="108" text-anchor="middle" class="title" fill="#a6e3a1">foo</text>
+
+  <!-- main（底层） -->
+  <rect x="60" y="130" width="200" height="46" rx="3" class="box" stroke="#89b4fa"/>
+  <text x="160" y="158" text-anchor="middle" class="title" fill="#89b4fa">main</text>
+
+  <!-- 栈底线 -->
+  <line x1="40" y1="186" x2="320" y2="186" stroke="#585b70" stroke-width="2.5"/>
+  <text x="160" y="206" text-anchor="middle" class="lbl">栈底（进程启动时固定）</text>
+
+  <text x="160" y="228" text-anchor="middle" class="mono">每层独立，互不干扰</text>
+</svg>

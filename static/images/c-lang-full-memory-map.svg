@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 380" width="480" height="380">
+  <style>
+    .bg    { fill: #1e1e2e; }
+    .box   { fill: #313244; stroke-width: 1.5; }
+    .title { font: bold 13px/1.4 'Courier New', Courier, monospace; }
+    .mono  { font: 12px/1.4 'Courier New', Courier, monospace; fill: #a6adc8; }
+    .lbl   { font: 12px/1.4 'Courier New', Courier, monospace; fill: #cdd6f4; }
+    .addr  { font: 11px/1.4 'Courier New', Courier, monospace; fill: #6c7086; }
+  </style>
+
+  <rect width="480" height="380" rx="10" class="bg"/>
+
+  <!-- 高地址 label -->
+  <text x="240" y="22" text-anchor="middle" class="addr">高地址</text>
+
+  <!-- 栈 Stack -->
+  <rect x="60" y="30" width="300" height="80" rx="3" class="box" stroke="#f38ba8"/>
+  <text x="210" y="52" text-anchor="middle" class="title" fill="#f38ba8">栈（Stack）</text>
+  <text x="210" y="70" text-anchor="middle" class="mono">main:  x=1, y=2, p=&amp;x</text>
+  <text x="210" y="88" text-anchor="middle" class="mono">swap_ok:  a=&amp;x, b=&amp;y, tmp=1</text>
+
+  <!-- 堆 Heap -->
+  <rect x="60" y="120" width="300" height="50" rx="3" class="box" stroke="#fab387"/>
+  <text x="210" y="150" text-anchor="middle" class="title" fill="#fab387">堆（Heap）</text>
+
+  <!-- BSS -->
+  <rect x="60" y="180" width="300" height="50" rx="3" class="box" stroke="#a6e3a1"/>
+  <text x="210" y="198" text-anchor="middle" class="title" fill="#a6e3a1">BSS（未初始化全局变量）</text>
+  <text x="210" y="216" text-anchor="middle" class="mono">int g = 0; → 自动置零</text>
+
+  <!-- 数据段 -->
+  <rect x="60" y="240" width="300" height="60" rx="3" class="box" stroke="#89b4fa"/>
+  <text x="210" y="260" text-anchor="middle" class="title" fill="#89b4fa">数据段（初始化全局/静态变量）</text>
+  <text x="210" y="278" text-anchor="middle" class="mono">int g = 42; · "hello" 字符串常量</text>
+
+  <!-- 代码段 -->
+  <rect x="60" y="310" width="300" height="46" rx="3" class="box" stroke="#cba6f7"/>
+  <text x="210" y="338" text-anchor="middle" class="title" fill="#cba6f7">代码段（程序指令）</text>
+
+  <!-- 低地址 label -->
+  <text x="240" y="372" text-anchor="middle" class="addr">低地址</text>
+
+  <!-- 右侧箭头指示增长方向 -->
+  <text x="374" y="75"  class="addr">↓ 向低地址增长</text>
+  <text x="374" y="148" class="addr">↑ 向高地址增长</text>
+</svg>

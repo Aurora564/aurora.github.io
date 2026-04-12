@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" width="500" height="320">
+  <style>
+    .bg    { fill: #1e1e2e; }
+    .box   { fill: #313244; stroke-width: 1.5; }
+    .title { font: bold 13px/1.4 'Courier New', Courier, monospace; }
+    .mono  { font: 12px/1.4 'Courier New', Courier, monospace; fill: #a6adc8; }
+    .lbl   { font: 12px/1.4 'Courier New', Courier, monospace; fill: #cdd6f4; }
+    .warn  { font: bold 12px/1.4 'Courier New', Courier, monospace; fill: #f38ba8; }
+  </style>
+
+  <rect width="500" height="320" rx="10" class="bg"/>
+
+  <!-- 左侧：初始状态 -->
+  <text x="120" y="24" text-anchor="middle" class="lbl">初始状态</text>
+
+  <rect x="20" y="36" width="200" height="50" rx="3" class="box" stroke="#89b4fa"/>
+  <text x="120" y="66" text-anchor="middle" class="title" fill="#89b4fa">main</text>
+
+  <rect x="20" y="90" width="200" height="50" rx="3" class="box" stroke="#a6e3a1"/>
+  <text x="120" y="120" text-anchor="middle" class="title" fill="#a6e3a1">recurse 第1层</text>
+
+  <text x="120" y="162" text-anchor="middle" class="mono">还有空间…</text>
+
+  <!-- 左侧栈底线 -->
+  <line x1="20" y1="290" x2="220" y2="290" stroke="#585b70" stroke-width="2"/>
+  <text x="120" y="308" text-anchor="middle" class="mono">栈底（8MB 上限）</text>
+
+  <!-- 箭头 -->
+  <text x="250" y="160" text-anchor="middle" class="warn" font-size="22">→</text>
+
+  <!-- 右侧：溢出状态 -->
+  <text x="380" y="24" text-anchor="middle" class="lbl">栈溢出</text>
+
+  <rect x="280" y="36" width="200" height="36" rx="3" class="box" stroke="#89b4fa"/>
+  <text x="380" y="59" text-anchor="middle" class="title" fill="#89b4fa">main</text>
+
+  <rect x="280" y="76" width="200" height="30" rx="3" class="box" stroke="#a6e3a1"/>
+  <text x="380" y="96" text-anchor="middle" class="title" fill="#a6e3a1">recurse 第1层</text>
+
+  <rect x="280" y="110" width="200" height="30" rx="3" class="box" stroke="#a6e3a1"/>
+  <text x="380" y="130" text-anchor="middle" class="title" fill="#a6e3a1">recurse 第2层</text>
+
+  <rect x="280" y="144" width="200" height="30" rx="3" class="box" stroke="#a6e3a1"/>
+  <text x="380" y="164" text-anchor="middle" class="title" fill="#a6e3a1">recurse 第3层</text>
+
+  <text x="380" y="192" text-anchor="middle" class="mono">…</text>
+
+  <!-- 越界警告框 -->
+  <rect x="280" y="200" width="200" height="40" rx="3" fill="#45162a" stroke="#f38ba8" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="380" y="225" text-anchor="middle" class="warn">⚠ 栈越界！</text>
+
+  <!-- 右侧栈底线 -->
+  <line x1="280" y1="250" x2="480" y2="250" stroke="#585b70" stroke-width="2"/>
+  <text x="380" y="268" text-anchor="middle" class="warn">Segmentation fault</text>
+  <text x="380" y="286" text-anchor="middle" class="mono">进程被操作系统终止</text>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 230" width="520" height="230">
+  <style>
+    .bg    { fill: #1e1e2e; }
+    .box   { fill: #313244; stroke-width: 1.5; }
+    .title { font: bold 13px/1.4 'Courier New', Courier, monospace; }
+    .mono  { font: 12px/1.4 'Courier New', Courier, monospace; fill: #a6adc8; }
+    .lbl   { font: 12px/1.4 'Courier New', Courier, monospace; fill: #cdd6f4; }
+    .note  { font: 11px/1.4 'Courier New', Courier, monospace; fill: #6c7086; }
+    .warn  { font: 11px/1.4 'Courier New', Courier, monospace; fill: #f38ba8; }
+  </style>
+  <defs>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="8" refX="6" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#a6e3a1"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="8" refX="6" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#f38ba8"/>
+    </marker>
+  </defs>
+
+  <rect width="520" height="230" rx="10" class="bg"/>
+
+  <!-- 标题：Before -->
+  <text x="260" y="22" text-anchor="middle" class="lbl">free(p) 之前</text>
+
+  <!-- Before：栈 -->
+  <rect x="30" y="32" width="130" height="55" rx="3" class="box" stroke="#f38ba8"/>
+  <text x="95"  y="52" text-anchor="middle" class="title" fill="#f38ba8">栈</text>
+  <text x="95"  y="72" text-anchor="middle" class="mono">p = 0x...a0</text>
+
+  <!-- Before：堆 -->
+  <rect x="310" y="32" width="170" height="55" rx="3" class="box" stroke="#a6e3a1"/>
+  <text x="395" y="52" text-anchor="middle" class="title" fill="#a6e3a1">堆（已分配）</text>
+  <text x="395" y="72" text-anchor="middle" class="mono">[ data ][ data ]</text>
+
+  <!-- Before：有效箭头 -->
+  <line x1="162" y1="59" x2="308" y2="59" stroke="#a6e3a1" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+
+  <!-- 分隔线 -->
+  <line x1="30" y1="108" x2="490" y2="108" stroke="#45475a" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="260" y="124" text-anchor="middle" class="lbl">free(p) 之后</text>
+
+  <!-- After：栈 -->
+  <rect x="30" y="132" width="130" height="55" rx="3" class="box" stroke="#f38ba8"/>
+  <text x="95"  y="152" text-anchor="middle" class="title" fill="#f38ba8">栈</text>
+  <text x="95"  y="172" text-anchor="middle" class="mono">p = 0x...a0</text>
+
+  <!-- After：堆（已释放，暗色） -->
+  <rect x="310" y="132" width="170" height="55" rx="3" fill="#252535" stroke="#585b70" stroke-width="1.5"/>
+  <text x="395" y="152" text-anchor="middle" class="title" fill="#585b70">堆（已归还）</text>
+  <text x="395" y="172" text-anchor="middle" class="note">内存不再属于你</text>
+
+  <!-- After：虚线无效箭头 -->
+  <line x1="162" y1="159" x2="305" y2="159" stroke="#f38ba8" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowRed)"/>
+  <text x="234" y="151" text-anchor="middle" class="warn">✕</text>
+
+  <!-- 警告文字 -->
+  <text x="260" y="215" text-anchor="middle" class="warn">p 的值没变，但对应内存不再属于你！</text>
+</svg>
