@@ -1,0 +1,48 @@
+<svg viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg" font-family="'SF Mono', 'Consolas', monospace">
+  <!-- background -->
+  <rect width="600" height="380" fill="#0d1117" rx="12"/>
+
+  <!-- title -->
+  <text x="300" y="34" text-anchor="middle" fill="#e6edf3" font-size="14" font-weight="bold">五层防御体系</text>
+
+  <!-- Layer 5: Static Analysis -->
+  <rect x="40" y="56" width="520" height="52" rx="8" fill="#1f3a5f" stroke="#388bfd" stroke-width="1.5"/>
+  <text x="300" y="76" text-anchor="middle" fill="#79c0ff" font-size="12" font-weight="bold">第 5 层：静态分析 clang-tidy / cppcheck</text>
+  <text x="300" y="96" text-anchor="middle" fill="#8b949e" font-size="11">编码 / CI 阶段 · 不运行程序，发现模式性问题</text>
+
+  <!-- arrow -->
+  <line x1="300" y1="108" x2="300" y2="120" stroke="#30363d" stroke-width="2"/>
+  <polygon points="294,118 306,118 300,126" fill="#30363d"/>
+
+  <!-- Layer 4: Compiler Warnings -->
+  <rect x="60" y="124" width="480" height="52" rx="8" fill="#1f3a2a" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="300" y="144" text-anchor="middle" fill="#56d364" font-size="12" font-weight="bold">第 4 层：编译器警告 -Wall -Wextra -Werror</text>
+  <text x="300" y="164" text-anchor="middle" fill="#8b949e" font-size="11">每次编译 · 警告即错误，0 警告才允许继续</text>
+
+  <!-- arrow -->
+  <line x1="300" y1="176" x2="300" y2="188" stroke="#30363d" stroke-width="2"/>
+  <polygon points="294,186 306,186 300,194" fill="#30363d"/>
+
+  <!-- Layer 3: Sanitizers -->
+  <rect x="80" y="192" width="440" height="52" rx="8" fill="#3a2a1f" stroke="#d29922" stroke-width="1.5"/>
+  <text x="300" y="212" text-anchor="middle" fill="#e3b341" font-size="12" font-weight="bold">第 3 层：Sanitizers ASan + UBSan</text>
+  <text x="300" y="232" text-anchor="middle" fill="#8b949e" font-size="11">开发 / 测试阶段 · 运行时检测，精确定位出错位置</text>
+
+  <!-- arrow -->
+  <line x1="300" y1="244" x2="300" y2="256" stroke="#30363d" stroke-width="2"/>
+  <polygon points="294,254 306,254 300,262" fill="#30363d"/>
+
+  <!-- Layer 2: assert -->
+  <rect x="100" y="260" width="400" height="52" rx="8" fill="#2d1f3a" stroke="#bc8cff" stroke-width="1.5"/>
+  <text x="300" y="280" text-anchor="middle" fill="#d2a8ff" font-size="12" font-weight="bold">第 2 层：运行时断言 assert</text>
+  <text x="300" y="300" text-anchor="middle" fill="#8b949e" font-size="11">程序执行中 · 验证内部不变量，快速失败</text>
+
+  <!-- arrow -->
+  <line x1="300" y1="312" x2="300" y2="324" stroke="#30363d" stroke-width="2"/>
+  <polygon points="294,322 306,322 300,330" fill="#30363d"/>
+
+  <!-- Layer 1: Coding Habits -->
+  <rect x="120" y="328" width="360" height="40" rx="8" fill="#3a1f1f" stroke="#f85149" stroke-width="1.5"/>
+  <text x="300" y="343" text-anchor="middle" fill="#ff7b72" font-size="12" font-weight="bold">第 1 层：编码习惯</text>
+  <text x="300" y="360" text-anchor="middle" fill="#8b949e" font-size="11">写每行代码时 · free后置NULL · 边界检查 · 初始化</text>
+</svg>

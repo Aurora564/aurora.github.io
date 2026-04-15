@@ -1,0 +1,19 @@
+/* 霞鹜文楷 Screen —— 正文字体 */
+@import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css');
+
+body,
+.post-content,
+.post-title,
+.entry-header,
+.entry-content,
+h1, h2, h3, h4, h5, h6 {
+  font-family: "LXGW WenKai Screen", "PingFang SC", "Microsoft YaHei", serif;
+}
+
+/* 代码块保持等宽字体，不受影响 */
+code,
+pre,
+pre code,
+.highlight {
+  font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", ui-monospace, monospace;
+}

@@ -1,0 +1,24 @@
+{{- $currentSeries := index .Params.series 0 }}
+{{- if $currentSeries }}
+  {{- $seriesPages := where site.RegularPages "Params.series" "intersect" (slice $currentSeries) }}
+  {{- if gt (len $seriesPages) 1 }}
+  <nav class="paginav">
+    {{- with $seriesPages.Prev . }}
+    <a class="prev" href="{{ .Permalink }}">
+      <span class="title">« {{ i18n "prev_page" }}</span>
+      <br>
+      <span>{{- .Name -}}</span>
+    </a>
+    {{- end }}
+    {{- with $seriesPages.Next . }}
+    <a class="next" href="{{ .Permalink }}">
+      <span class="title">{{ i18n "next_page" }} »</span>
+      <br>
+      <span>{{- .Name -}}</span>
+    </a>
+    {{- end }}
+  </nav>
+  {{- end }}
+{{- else }}
+  {{- /* 无 series 的文章：不显示上下篇导航 */ -}}
+{{- end }}
